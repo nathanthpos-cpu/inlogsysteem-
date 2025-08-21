@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inloggen</title>
+    <link rel="stylesheet" href="inloggen.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>Inloggen</h1>
+        <form id="loginForm">
+            <label for="email">E-mailadres</label>
+            <input type="email" id="email" name="email" placeholder="Voer je e-mailadres in" required>
+
+            <label for="password">Wachtwoord</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" placeholder="Voer je wachtwoord in" required>
+                <span class="toggle-password" id="togglePassword">👁</span>
+            </div>
+
+            <button type="submit">Inloggen</button>
+        </form>
+
+        <a href="#" class="link">Inloggegevens vergeten?</a>
+        <hr>
+        <p>Nog geen account? <a href="register.html">Maak er één aan</a></p>
+    </div>
+
+    <!-- Firebase integratie -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+        // 🔹 Zet hier jouw Firebase configuratie (uit Firebase Console)
+        const firebaseConfig = {
+            apiKey: "JOUW_API_KEY",
+            authDomain: "JOUW_PROJECT.firebaseapp.com",
+            projectId: "JOUW_PROJECT_ID",
+            storageBucket: "JOUW_PROJECT.appspot.com",
+            messagingSenderId: "JOUW_SENDER_ID",
+            appId: "JOUW_APP_ID"
+        };
+
+        // Firebase starten
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Loginformulier
+        const loginForm = document.getElementById("loginForm");
+        loginForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    alert("Welkom " + userCredential.user.email);
+                    window.location.href = "dashboard.html"; // Beveiligde pagina
+                })
+                .catch((error) => {
+                    alert("Fout: " + error.message);
+                });
+        });
+
+        // Optioneel: wachtwoord zichtbaar maken
+        document.getElementById("togglePassword").addEventListener("click", () => {
+            const passwordInput = document.getElementById("password");
+            passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+        });
+    </script>
+
+</body>
+</html>

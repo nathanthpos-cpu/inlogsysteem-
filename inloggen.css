@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;      /* verticaal centreren */
+    justify-content: center;  /* horizontaal centreren */
+}
+
+/* Login container */
+.login-container {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 380px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Titel */
+.login-container h1 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Labels en velden */
+.login-container label {
+    display: block;
+    text-align: left;
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Knop */
+.login-container button {
+    background-color: #00a1e1;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    margin-top: 1.5rem;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #008fc2;
+}
+
+/* Links */
+.link {
+    display: block;
+    margin-top: 1rem;
+    color: #00a1e1;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+hr {
+    margin: 2rem 0;
+} /* Jouw bestaande CSS blijft hier staan */
+
+/* Stijl voor wachtwoordcontainer en oog-icoon */
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    font-size: 18px;
+}
+

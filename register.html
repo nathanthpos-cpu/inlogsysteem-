@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registreren</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+    <div class="register-container">
+        <h1>Account aanmaken</h1>
+        <form id="registerForm">
+            <label for="email">E-mailadres</label>
+            <input type="email" id="email" name="email" placeholder="Voer je e-mailadres in" required>
+
+            <label for="password">Wachtwoord</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" placeholder="Minimaal 6 tekens" required>
+                <span class="toggle-password" id="togglePassword">👁</span>
+            </div>
+
+            <label for="confirmPassword">Bevestig wachtwoord</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Herhaal wachtwoord" required>
+
+            <button type="submit">Registreren</button>
+        </form>
+
+        <hr>
+        <p>Heb je al een account? <a href="inloggen.html">Log in</a></p>
+    </div>
+
+    <!-- JavaScript apart geladen -->
+    <script type="module" src="register.js"></script>
+</body>
+</html>
