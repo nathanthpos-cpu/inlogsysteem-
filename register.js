@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // https://github.com/nathanthpos-cpu/inlogsysteem-.git
             // VERGEET NIET DEZE URL TE VERVANGEN
-            const scriptURL = 'HIER_PLAATS_JE_DE_GEKOPIEERDE_URL';
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbw2vJeezSR7COpUSHFUSZroxAQ7m8LBgvIYevd7-h4_Mf28USk6i-1R6frMrNBs6z-N/exec';
 
             // Maak een FormData-object aan
             const formData = new FormData();
